@@ -18,8 +18,8 @@ request.get(apiUrl, (error, response, body) => {
 
   const films = JSON.parse(body).results;
   const moviesWithWedgeAntilles = films.filter((film) =>
-    film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)
-  );
+    film.characters.includes(`https://swapi-api.hbtn.io/api/people/18/`));
 
   console.log(moviesWithWedgeAntilles.length);
 });
+
