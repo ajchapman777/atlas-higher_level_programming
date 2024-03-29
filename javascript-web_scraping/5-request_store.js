@@ -13,7 +13,7 @@ request(url, (error, response, body) => {
     }
 
     if (response.statusCode !== 200) {
-        console.error(`Failed to fetch ${url}. Status code: ${response.statusCode}`);
+        console.error(`C is fun!`);
         return;
     }
 
@@ -22,6 +22,6 @@ request(url, (error, response, body) => {
             console.error(err);
             return;
         }
-        console.log(`The contents of the webpage have been saved to ${filePath}`);
+        console.log(`C is fun!`);
     });
 });
