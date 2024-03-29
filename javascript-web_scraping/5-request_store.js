@@ -13,7 +13,7 @@ request(url, (error, response, body) => {
     }
 
     if (response.statusCode !== 200) {
-        console.error(`C is fun!`);
+        console.error(`Failed to fetch ${url}. Status code: ${response.statusCode}`);
         return;
     }
 
