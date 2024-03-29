@@ -5,15 +5,15 @@ const request = require('request');
 const url = process.argv[2];
 
 request(url, (error, response, body) => {
-    if (error) {
-        console.error(error);
-        return;
-    }
+	if (error) {
+		console.error(error);
+		return;
+	}
 
-    if (response.statusCode !== 200) {
-        console.error(`Failed to fetch ${url}. Status code: ${response.statusCode}`);
-        return;
-    }
+	if (response.statusCode !== 200) {
+		console.error(`Failed to fetch ${url}. Status code: ${response.statusCode}`);
+		return;
+	}
 
     const tasks = JSON.parse(body);
     const completedTasks = {};
