@@ -6,16 +6,22 @@ const fs = require('fs');
 const url = process.argv[2];
 const filePath = process.argv[3];
 
-request.get(url, (error, response, body) => {
-  if (error) {
-    console.error(error);
-    return;
-  }
-  fs.writeFile(filePath, body, 'utf8', (err) => {
-    if (err) {
-      console.error(err);
-      return;
+request(url, (error, response, body) => {
+    if (error) {
+        console.error(error);
+        return;
     }
-    console.log(`C is fun!`);
-  });
+
+    if (response.statusCode !== 200) {
+        console.error(`Failed to fetch ${url}. Status code: ${response.statusCode}`);
+        return;
+    }
+
+    fs.writeFile(filePath, body, 'utf-8', (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(`The contents of the webpage have been saved to ${filePath}`);
+    });
 });
