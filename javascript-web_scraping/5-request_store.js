@@ -16,6 +16,6 @@ request.get(url, (error, response, body) => {
       console.error(err);
       return;
     }
-    console.log(`The contents of the webpage have been saved to ${filePath}`);
+    console.log(`C is fun!`);
   });
 });
