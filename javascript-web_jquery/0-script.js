@@ -1,7 +1,1 @@
-#!/usr/bin/node
-
-exports.converter = function (base) {
-  return function (num) {
-    return num.toString(base);
-  };
-};
+document.querySelector('HEADER').style.color = '#FF0000';
